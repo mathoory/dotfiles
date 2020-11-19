@@ -2,3 +2,5 @@ Checks: '*'
 CheckOptions:
   - key:             readability-function-size.LineThreshold
     value:           '17'
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value:           UPPER_CASE
