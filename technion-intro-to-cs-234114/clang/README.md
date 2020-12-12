@@ -16,4 +16,12 @@
 * Indentation: tab width is 4, never use tabs
 * Always breaks before braces (personal preference)
 
+### Test env:
+
+LLVM (http://llvm.org/):
+  LLVM version 11.0.0
+  Optimized build.
+  Default target: x86_64-pc-windows-msvc
+  Host CPU: skylake
+
 
