@@ -1,6 +1,8 @@
-Checks: '*'
+Checks: '*,-cert-err34-c, -clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling,-clang-diagnostic-deprecated-declarations,-readability-isolate-declaration,-cppcoreguidelines-init-variables'
 CheckOptions:
-  - key:             readability-function-size.LineThreshold
-    value:           '17'
+  - key:             readability-function-size.StatementThreshold
+    value:           '13'
   - key: readability-identifier-naming.MacroDefinitionCase
     value:           UPPER_CASE
+  - key: llvmlibc-restrict-system-libc-headers.Includes
+    value: 'stdio.h,stdbool.h'
