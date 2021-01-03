@@ -7,7 +7,7 @@
 * No magic numbers allowed
 * macros (defines) are UPPER_CASE
 * allowed headers according to exercise
-* disabled checks for unsafe functions such as scanf
+* disabled checks for unsafe functions such as scanf, strcmp
 * disabled declaration isolation (saves lines of code)
 * disabled initialize checks (personal preference)
 
@@ -15,6 +15,7 @@
 * Column width: 75
 * Indentation: tab width is 4, never use tabs
 * Always breaks before braces (personal preference)
+* Disabled argument BinPacking (Each argument will have it's own line)
 
 ### Test env:
 
