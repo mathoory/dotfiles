@@ -4,6 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'snipMate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -28,8 +29,12 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'shime/vim-livedown'
 Plugin 'Scuilion/markdown-drawer'
+" clang-tidy
 Plugin 'rhysd/vim-clang-format'
+Plugin 'kana/vim-operator-user'
+
 call vundle#end()
+
 
 "------------------------------------------------------------
 " Misc options
@@ -188,6 +193,22 @@ set formatoptions=croqn1
 " Automatically add closing brackets after pressing enter similarly to VS
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+
+
+"------------------------------------------------------------
+" syntastic
+" use non obstructive setup (no error list)
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_auto_jump = 0
+let g:syntastic_c_checkers = ['gcc','clang_tidy']
+let g:syntastic_cpp_checkers = ['gcc','clang_tidy']
+"------------------------------------------------------------
+" clang
+autocmd FileType c,cpp,objc map <buffer> = <Plug>(operator-clang-format) 
+"override = to use clang
 
 "------------------------------------------------------------
 " Directory browser settings
