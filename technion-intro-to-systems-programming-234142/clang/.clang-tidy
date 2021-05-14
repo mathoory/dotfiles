@@ -1,0 +1,15 @@
+
+Checks: '*,-cert-err34-c, -clang-analyzer-security.insecureAPI.strcpy,-clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling,-clang-diagnostic-deprecated-declarations,-cppcoreguidelines-init-variables,-misc-no-recursion,-android-cloexec-fopen'
+CheckOptions:
+  - key:             readability-function-size.StatementThreshold
+    value:           '30'
+  - key: readability-identifier-naming.MacroDefinitionCase
+    value:           UPPER_CASE
+  - key: readability-identifier-naming.VariableCase    
+    value:           lower_case
+  - key: readability-identifier-naming.FunctionCase 
+    value:           camelBack 
+  -  key: readability-identifier-naming.StructCase 
+     value:          CamelCase 
+  - key: llvmlibc-restrict-system-libc-headers.Includes
+    value: 'stdio.h,stdbool.h,stdlib.h,string.h'
