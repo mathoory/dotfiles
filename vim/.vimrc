@@ -4,7 +4,9 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
+Plugin 'dense-analysis/ale'
+Plugin 'thinca/vim-localrc'
 Plugin 'snipMate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -22,6 +24,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-speeddating'
 Plugin 'itchyny/calendar.vim'
 Plugin 'SyntaxRange'
+Plugin 'kkoomen/vim-doge'
 " ':Man <section> [page]'
 Plugin 'vim-utils/vim-man'
 " Markdown plugins
@@ -60,9 +63,9 @@ set hidden
 " line of a window
 set ruler
 
-" Show the line number relative to the current line and the line number of 
-" the current line
-set relativenumber
+" turn hybrid line numbers on
+":set number relativenumber
+:set nu rnu
 
 " Allow backspacing over autoindent, line breaks and start of insert action
 set backspace=indent,eol,start
@@ -145,6 +148,7 @@ map k gk
 set background=dark
 set t_Co=256
 colorscheme molokai
+hi MatchParen ctermfg=208 ctermbg=bg
 
 "------------------------------------------------------------
 " Syntax-related settings
@@ -194,6 +198,9 @@ set formatoptions=croqn1
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 
+" Enable secure external .vimrc files.
+set exrc
+set secure
 
 "------------------------------------------------------------
 " syntastic
@@ -203,8 +210,13 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 0
+let g:syntastic_c_config_file=".vim_syntax"
+let g:syntastic_cpp_config_file=".vim_syntax"
+let g:syntastic_clang_tidy_config_file=".vim_syntax"
+let g:syntastic_c_check_header = 1
 let g:syntastic_c_checkers = ['gcc','clang_tidy']
 let g:syntastic_cpp_checkers = ['gcc','clang_tidy']
+let g:syntastic_cpp_clang_tidy_args = '-extra-arg-before=-xc++'
 "------------------------------------------------------------
 " clang
 autocmd FileType c,cpp,objc map <buffer> = <Plug>(operator-clang-format) 
