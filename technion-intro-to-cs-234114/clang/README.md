@@ -3,11 +3,12 @@
 ## Enforcing the following guidelines:
 
 ### clang-tidy:
-* Max method statements: 13 lines (doesn't 100% match course guidelines, but as close as we can get.)
+* Max method statements: 13 lines (as close as we can get to course guidelines.)
 * No magic numbers allowed
 * macros (defines) are UPPER_CASE
 * allowed headers according to exercise
 * disabled checks for unsafe functions such as scanf, strcmp
+* disabled checks for possible 'const' arguments, not used in this course
 * disabled declaration isolation (saves lines of code)
 * disabled initialize checks (personal preference)
 
@@ -24,5 +25,3 @@ LLVM (http://llvm.org/):
   Optimized build.
   Default target: x86_64-pc-windows-msvc
   Host CPU: skylake
-
-
